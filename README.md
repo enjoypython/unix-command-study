@@ -41,10 +41,13 @@ apt remove [패키지 이름]
 pwd             # print the current working directory
 ls              # list the files and directories
 ls -l           # print ls commend in long list
+ls -a           # list the files and directories including hidden files
+ls -al          # print ls commend in long list including hidden files
 cd /            # go to the root directory
 cd [상대경로]    # go to 상대경로
 cd ..           # go to one level up
-cd -            # go to the home directory
+cd ~            # go to the home directory
+cd -            # go to the previous directory
 
 
 # find명령어
@@ -69,17 +72,18 @@ find / -type f -name "*.py"
 
 <br>
 
-```
-
-<a name="4"></a>
-
 ### Manipulating files and directories
+<a name="4"></a>
 ```bash
 mkdir [directory name]            # create directory
 mv [old_filename] [new_filename]  # rename file or directory
 touch [filename]                  # create file
 rm [filename]                     # remove filename
 rm -r [directory]                 # recursively remove a directory
+rm -f                             # remove a directory by force
+
+# remove directory recursively
+rm -rf [directory]
 ```
 
 <a name="5"></a>
@@ -167,6 +171,8 @@ usermod -a -G <그룹> <계정>	# 계정의 소속 그룹을 추가(add) 합니�
 ### Managing File Permissions
 ```bash
 # ref : codewithmosh.com
+# additional study ref : https://ttend.tistory.com/686
+
 chmod u+x [file name]     # give the owning user execute permission
 chmod g+x [file name]     # give the owning group execute permission
 chmod o+x [file name]     # give everyone else execute permission
@@ -179,6 +185,11 @@ chmod ug-x [file name]    # to remove the execute permission from
 # deploy.sh 파일에 u 사용자에게 execute 권한을 부여한다
 chmod u+x deploy.sh
 
+# set read only permission only for the owing user 
+chmod 400 mysecurity.pem
+
+# give all permission of recursive directory to everyone
+chmod -R 777 [directory] 
 ```
 
 
