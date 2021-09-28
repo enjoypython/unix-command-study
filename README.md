@@ -168,6 +168,8 @@ usermod -a -G <그룹> <계정>	# 계정의 소속 그룹을 추가(add) 합니�
 
 <br>
 
+<a name="10"></a>
+
 ### Managing File Permissions
 ```bash
 # ref : codewithmosh.com
@@ -193,7 +195,7 @@ chmod -R 777 [directory]
 ```
 
 
-<a name="10"></a>
+<a name="11"></a>
 
 ### Reading Text files
 ```bash
@@ -207,8 +209,23 @@ head -n 5 # 첫 5줄 출력
 tail -n 5 # 마지막 5줄 출력
 ```
 
+### Redirection
+```bash
+# 출력된 내용을 [filename]으로 저장한다
+[출력 명령어] > [filename]
 
-<a name="11"></a>
+# [filename] 을 읽어서 head 로 출력한다
+head < [filename]
+
+# filename을 head로 읽은 후 head로 출력된 결과물을 filename2로 저장
+head < [filename] > [filename2]
+
+# append contents to files.txt (not overwriting but appending)
+ls >> files.txt
+```
+
+
+<a name="12"></a>
 
 ### Cat 커맨드 심화
 ```bash
@@ -226,10 +243,11 @@ echo {문자} > file1.txt
 ```
 
 
-<a name="12"></a>
+<a name="13"></a>
 
 ### Grep 명령어
 ```bash
+# ref : https://recipes4dev.tistory.com/157
 global regular expression
 
 
@@ -262,8 +280,7 @@ grep -ir hello .
 <br>
 
 # Command Chain
-
-<a name="13"></a>
+<a name="14"></a>
 ```bash
 # ; 로 여러 명령어를 한줄로 처리가능하다.
 mkdir test; cd test; echo done
